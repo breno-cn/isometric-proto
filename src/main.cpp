@@ -8,7 +8,9 @@ int main() {
     int height = 512; 
 
     auto gameMap = std::make_shared<GameMap>();
-    Game game(gameMap);
+    auto camera = std::make_shared<PlayerCamera>();
+    auto player = std::make_shared<Player>();
+    Game game(gameMap, camera, player);
 
     InitWindow(width, height, "Isometric rendering prototype");
     SetTargetFPS(60);
@@ -25,7 +27,7 @@ int main() {
             game.update();
 
             game.draw();
-            // DrawFPS(0, 0);
+            DrawFPS(0, 0);
 
         EndDrawing();
     }
