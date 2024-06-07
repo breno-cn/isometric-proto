@@ -7,7 +7,6 @@
 void GameMap::init() {
     _grass = LoadTexture("/home/nirra/Documents/isometric-proto/tiles/grass.png");
     _sand = LoadTexture("/home/nirra/Documents/isometric-proto/tiles/sand.png");
-    _character = LoadTexture("/home/nirra/Documents/isometric-proto/sprites/char.png");
 }
 
 void GameMap::drawTile(Texture2D texture, float x, float y) {
@@ -28,20 +27,4 @@ void GameMap::draw() {
             }
         }
     }
-
-    Rectangle source = {
-        .x = 0,
-        .y = 25,
-        .width = 16,
-        .height = 25,
-    };
-
-    Rectangle dest = {
-        .x = 45,
-        .y = 45,
-        .width = TILE_WIDTH * 0.35,
-        .height = TILE_HEIGHT * 0.7,
-    };
-
-    DrawTexturePro(_character, source, dest, Vector2Zero(), 0, RAYWHITE);
 }

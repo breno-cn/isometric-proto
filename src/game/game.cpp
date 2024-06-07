@@ -26,7 +26,8 @@ void Game::update() {
 
 void Game::draw() {
     BeginMode2D(_camera.get()->_camera);
-        _camera.get()->followPlayer(_player);
         _map.get()->draw();
+        _player.get()->draw();
+        _camera.get()->followPlayer(_player);
     EndMode2D();
 }
