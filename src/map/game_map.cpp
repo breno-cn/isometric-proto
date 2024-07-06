@@ -4,16 +4,17 @@
 #include "./game_map.hpp"
 #include "game_map.hpp"
 
+#include "../math/math_utils.hpp"
+
 void GameMap::init() {
-    _grass = LoadTexture("/home/nirra/Documents/isometric-proto/tiles/grass.png");
-    _sand = LoadTexture("/home/nirra/Documents/isometric-proto/tiles/sand.png");
+    _grass = LoadTexture("./tiles/grass.png");
+    _sand = LoadTexture("./tiles/sand.png");
 }
 
 void GameMap::drawTile(Texture2D texture, float x, float y) {
-    float _x = X_START + (x - y) * TILE_WIDTH/2;
-    float _y = Y_START + (x + y) * TILE_HEIGHT/2;
+    Vector2 isometric = math::cartesian_to_isometric(Vector2{x, y});
 
-    DrawTexture(texture, _x, _y, RAYWHITE);
+    DrawTexture(texture, isometric.x, isometric.y, RAYWHITE);
 }
 
 void GameMap::draw() {

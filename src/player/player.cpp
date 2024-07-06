@@ -2,17 +2,18 @@
 #include <raymath.h>
 
 #include "./player.hpp"
+#include "../math/math_utils.hpp"
 
 #define TILE_WIDTH 100
 #define TILE_HEIGHT 50
 
 void Player::init() {
-    _position = Vector2 { 45, 45 };
-    _sprite = LoadTexture("/home/nirra/Documents/isometric-proto/sprites/char.png");
+    _position = Vector2Zero();
+    _sprite = LoadTexture("./sprites/char.png");
 }
 
 void Player::update() {
-    float acceleration = 5;
+    float acceleration = 0.1;
 
     if (IsKeyDown(KEY_A)) {
         _position.x -= acceleration;
@@ -39,9 +40,11 @@ void Player::draw() {
         .height = 25,
     };
 
+    Vector2 isometric = math::cartesian_to_isometric(_position);
+
     Rectangle dest = {
-        .x = _position.x,
-        .y = _position.y,
+        .x = isometric.x,
+        .y = isometric.y,
         .width = TILE_WIDTH * 0.35,
         .height = TILE_HEIGHT * 0.7,
     };

@@ -1,4 +1,5 @@
 #include "PlayerCamera.hpp"
+#include "../math/math_utils.hpp"
 
 void PlayerCamera::init() {
     _camera = { 0 };
@@ -7,5 +8,6 @@ void PlayerCamera::init() {
 }
 
 void PlayerCamera::followPlayer(std::shared_ptr<Player> player) {
-    _camera.target = player.get()->_position;
+    // _camera.target = player.get()->_position;
+    _camera.target = math::cartesian_to_isometric(player.get()->_position);
 }
