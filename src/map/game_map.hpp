@@ -14,8 +14,8 @@
 #define SCREEN_HEIGHT 512
 
 // #define TILE_SIZE 64
-#define TILE_WIDTH 100
-#define TILE_HEIGHT 50
+// #define TILE_WIDTH 100
+// #define TILE_HEIGHT 50
 
 // #define X_START (SCREEN_WIDTH/2 - TILE_WIDTH/2)
 // #define Y_START (50)
@@ -38,6 +38,7 @@ struct GameMap {
     Texture2D _grass;
     Texture2D _sand;
     Texture2D _character;
+    Texture2D _altGrass;
 
     void draw();
     void init();

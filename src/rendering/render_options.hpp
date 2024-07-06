@@ -2,7 +2,7 @@
 
 namespace render {
 
-    constexpr float TILE_WIDTH = 100;
-    constexpr float TILE_HEIGHT = 50;
+    constexpr float TILE_WIDTH = 32;
+    constexpr float TILE_HEIGHT = 32;
 
 }

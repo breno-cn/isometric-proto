@@ -9,6 +9,7 @@
 void GameMap::init() {
     _grass = LoadTexture("./tiles/grass.png");
     _sand = LoadTexture("./tiles/sand.png");
+    _altGrass = LoadTexture("./tiles/flat_grass.png");
 }
 
 void GameMap::drawTile(Texture2D texture, float x, float y) {
@@ -22,9 +23,11 @@ void GameMap::draw() {
     for (int i = 0; i < MAP_HEIGHT; i++) {
         for (int j = 0; j < MAP_WIDTH; j++) {
             if (_tiles[i][j] == 0) {
-                this->drawTile(_sand, j, i);
+                // this->drawTile(_sand, j, i);
+                this->drawTile(_altGrass, j, i);
             } else {
-                this->drawTile(_grass, j, i);
+                // this->drawTile(_grass, j, i);
+                this->drawTile(_altGrass, j, i);
             }
         }
     }

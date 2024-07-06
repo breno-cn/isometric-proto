@@ -49,3 +49,5 @@ CMakeUserPresets.json
 
 isometric-proto
 *.cmake
+
+.DS_Store

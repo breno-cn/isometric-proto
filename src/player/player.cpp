@@ -4,8 +4,8 @@
 #include "./player.hpp"
 #include "../math/math_utils.hpp"
 
-#define TILE_WIDTH 100
-#define TILE_HEIGHT 50
+#define TILE_WIDTH 32
+#define TILE_HEIGHT 32
 
 void Player::init() {
     _position = Vector2Zero();

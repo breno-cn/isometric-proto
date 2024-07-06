@@ -3,7 +3,7 @@
 
 void PlayerCamera::init() {
     _camera = { 0 };
-    _camera.zoom = 1.7;
+    _camera.zoom = 3.7;
     _camera.offset = { .x = 512, .y = 256 };
 }
 
