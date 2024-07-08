@@ -1,12 +1,20 @@
 #include <memory>
 
+#include "scene.hpp"
 #include "../map/game_map.hpp"
 #include "../player/PlayerCamera.hpp"
 #include "../player/player.hpp"
 
 class Game {
 
+private:
+    std::unique_ptr<Scene> _scene;
+
 public:
+    void loadScene();
+    void run();
+
+    /*
     Game(std::shared_ptr<GameMap> map, std::shared_ptr<PlayerCamera> camera, std::shared_ptr<Player> player);
 
     std::shared_ptr<GameMap> _map;
@@ -17,4 +25,6 @@ public:
     void handleInput();
     void update();
     void draw();
+    */
+
 };

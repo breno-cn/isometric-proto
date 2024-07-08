@@ -7,7 +7,7 @@ void PlayerCamera::init() {
     _camera.offset = { .x = 512, .y = 256 };
 }
 
-void PlayerCamera::followPlayer(std::shared_ptr<Player> player) {
+void PlayerCamera::followPlayer(Player& player) {
     // _camera.target = player.get()->_position;
-    _camera.target = math::cartesian_to_isometric(player.get()->_position);
+    _camera.target = math::cartesian_to_isometric(player._position);
 }

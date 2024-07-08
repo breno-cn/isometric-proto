@@ -4,6 +4,19 @@
 
 #include "game.hpp"
 
+void Game::loadScene() {
+    _scene = std::make_unique<Scene>();
+
+    _scene.get()->init();
+}
+
+void Game::run() {
+    _scene.get()->handleInput();
+    _scene.get()->update();
+    _scene.get()->draw();
+}
+
+/*
 Game::Game(std::shared_ptr<GameMap> map, std::shared_ptr<PlayerCamera> camera, std::shared_ptr<Player> player) {
     _map = map;
     _camera = camera;
@@ -27,7 +40,8 @@ void Game::update() {
 void Game::draw() {
     BeginMode2D(_camera.get()->_camera);
         _map.get()->draw();
-        _player.get()->draw();
+        // _player.get()->draw();
         _camera.get()->followPlayer(_player);
     EndMode2D();
 }
+*/
