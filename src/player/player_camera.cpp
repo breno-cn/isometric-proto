@@ -1,5 +1,5 @@
 #include "PlayerCamera.hpp"
-#include "../math/math_utils.hpp"
+#include "math_utils.hpp"
 
 void PlayerCamera::init() {
     _camera = { 0 };

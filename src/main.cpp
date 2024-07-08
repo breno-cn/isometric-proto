@@ -1,7 +1,8 @@
 #include <raylib.h>
 #include <memory>
 
-#include "./game/game.hpp"
+#include "game.hpp"
+#include "static_sprite.hpp"
 
 int main() {
     int width = 1024;
@@ -13,7 +14,10 @@ int main() {
     auto player = std::make_shared<Player>();
     Game game(gameMap, camera, player);
     */
-   Game game;
+    Game game;
+
+    // StaticSprite sprite;
+    // Sprite *sprite = new StaticSprite();
 
     InitWindow(width, height, "Isometric rendering prototype");
     SetTargetFPS(60);
@@ -30,6 +34,8 @@ int main() {
 
         EndDrawing();
     }
+
+    // delete sprite;
 
     return 0;
 }

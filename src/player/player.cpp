@@ -1,8 +1,8 @@
 #include <raylib.h>
 #include <raymath.h>
 
-#include "./player.hpp"
-#include "../math/math_utils.hpp"
+#include "player.hpp"
+#include "math_utils.hpp"
 
 #define TILE_WIDTH 32
 #define TILE_HEIGHT 32

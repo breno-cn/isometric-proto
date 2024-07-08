@@ -1,10 +1,10 @@
 #include "scene.hpp"
-#include "../math/math_utils.hpp"
+#include "math_utils.hpp"
 
 Scene::~Scene() {
-    for (int i = 0; i < N_SPRITES; i++) {
-        UnloadTexture(_sprites[i]);
-    }
+    // for (int i = 0; i < N_SPRITES; i++) {
+        // UnloadTexture(_spriteTable[i]);
+    // }
 }
 
 void Scene::drawTile(int x, int y, int spriteIndex) {
@@ -12,16 +12,19 @@ void Scene::drawTile(int x, int y, int spriteIndex) {
     Vector2 cartesian = Vector2 { float(x), float(y) };
     Vector2 isometric = math::cartesian_to_isometric(cartesian);
 
-    Texture2D texture = _sprites[spriteIndex];
+    Sprite& sprite = *_spriteTable[spriteIndex];
+    sprite.draw(isometric);
 
-    DrawTexture(texture, isometric.x, isometric.y, RAYWHITE);
+    // DrawTexture(texture, isometric.x, isometric.y, RAYWHITE);
 }
 
 void Scene::init() {
     for (int i = 0; i < N_SPRITES; i++) {
         const char* filepath = TextFormat("./tiles/tile_%d.png", i);
+        // _spriteTable[i] = std::make_unique<Sprite>(filepath);
+        _spriteTable.push_back(std::make_unique<StaticSprite>(filepath));
 
-        _sprites[i] = LoadTexture(filepath);
+        // _spriteTable[i] = LoadTexture(filepath);
     }
 
     _player = std::make_unique<Player>();
@@ -46,7 +49,7 @@ void Scene::draw() {
             for (int x = 0; x < MAP_WIDTH; x++) {
                 int spriteIndex = _map[x][y];
 
-                // DrawTexture(_sprites[spriteIndex], x, y, RAYWHITE);
+                // DrawTexture(_spriteTable[spriteIndex], x, y, RAYWHITE);
                 this->drawTile(x, y, spriteIndex);
             }
         }

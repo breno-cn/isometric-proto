@@ -1,9 +1,9 @@
 #include <memory>
 
 #include "scene.hpp"
-#include "../map/game_map.hpp"
-#include "../player/PlayerCamera.hpp"
-#include "../player/player.hpp"
+#include "game_map.hpp"
+#include "PlayerCamera.hpp"
+#include "player.hpp"
 
 class Game {
 

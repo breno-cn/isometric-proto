@@ -2,9 +2,13 @@
 
 #include <raylib.h>
 #include <memory>
+#include <vector>
 
-#include "../player/player.hpp"
-#include "../player/PlayerCamera.hpp"
+#include "player.hpp"
+#include "PlayerCamera.hpp"
+
+#include "sprite.hpp"
+#include "static_sprite.hpp"
 
 #define N_SPRITES 60
 
@@ -14,7 +18,10 @@
 class Scene {
 
 private:
-    Texture2D _sprites[N_SPRITES];
+    // Sprite* _spriteTable[N_SPRITES];
+    // std::unique_ptr<Sprite> _spriteTable[N_SPRITES];
+    std::vector<std::unique_ptr<Sprite>> _spriteTable;
+
     int _map[MAP_HEIGHT][MAP_WIDTH] = {
         {1, 1, 1, 1, 1, 1, 1, 1},
         {1, 0, 1, 0, 0, 0, 0, 1},

@@ -3,7 +3,7 @@
 #include <raylib.h>
 #include <memory>
 
-#include "./player.hpp"
+#include "player.hpp"
 
 struct PlayerCamera {
     Camera2D _camera;

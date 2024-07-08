@@ -1,10 +1,9 @@
 #include <raylib.h>
 #include <raymath.h>
 
-#include "./game_map.hpp"
 #include "game_map.hpp"
 
-#include "../math/math_utils.hpp"
+#include "math_utils.hpp"
 
 void GameMap::init() {
     _grass = LoadTexture("./tiles/grass.png");
