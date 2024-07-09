@@ -8,16 +8,7 @@ int main() {
     int width = 1024;
     int height = 512; 
 
-    /*
-    auto gameMap = std::make_shared<GameMap>();
-    auto camera = std::make_shared<PlayerCamera>();
-    auto player = std::make_shared<Player>();
-    Game game(gameMap, camera, player);
-    */
     Game game;
-
-    // StaticSprite sprite;
-    // Sprite *sprite = new StaticSprite();
 
     InitWindow(width, height, "Isometric rendering prototype");
     SetTargetFPS(60);
@@ -34,8 +25,6 @@ int main() {
 
         EndDrawing();
     }
-
-    // delete sprite;
 
     return 0;
 }

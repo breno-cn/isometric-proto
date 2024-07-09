@@ -18,8 +18,6 @@
 class Scene {
 
 private:
-    // Sprite* _spriteTable[N_SPRITES];
-    // std::unique_ptr<Sprite> _spriteTable[N_SPRITES];
     std::vector<std::unique_ptr<Sprite>> _spriteTable;
 
     int _map[MAP_HEIGHT][MAP_WIDTH] = {
