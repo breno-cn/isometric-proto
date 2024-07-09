@@ -47,12 +47,14 @@ void Scene::draw() {
     BeginMode2D(_camera.get()->_camera);
         for (int y = 0; y < MAP_HEIGHT; y++) {
             for (int x = 0; x < MAP_WIDTH; x++) {
-                int spriteIndex = _map[x][y];
+                int spriteIndex = _map[y][x];
 
                 // DrawTexture(_spriteTable[spriteIndex], x, y, RAYWHITE);
                 this->drawTile(x, y, spriteIndex);
             }
         }
+
+        this->drawTile(2, 3, 51);
     EndMode2D();
 }
 

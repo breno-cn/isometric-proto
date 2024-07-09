@@ -13,9 +13,4 @@ public:
 protected:
     Texture2D _spritesheet;
 
-
-    // Sprite();
-
-    // void loadSpritesheet(char *filepath);
-
 };

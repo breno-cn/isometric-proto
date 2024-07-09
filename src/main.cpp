@@ -27,7 +27,7 @@ int main() {
     while (!WindowShouldClose()) {
         BeginDrawing();
 
-            ClearBackground(RAYWHITE);
+            ClearBackground(BLACK);
             game.run();
 
             DrawFPS(0, 0);
